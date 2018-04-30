@@ -1,0 +1,60 @@
+--功能 度數2度
+function deg2rad(deg)
+--返回180度
+return deg*math.pi/180
+--結束  
+end
+--功能 度數2度
+function deg2rad(deg)
+--返回每180度1pi
+return rad*180/math.pi
+--結束
+end
+--功能 函數(函數)
+function nullFunc(arg)
+--返回函數
+return arg
+--結束
+end
+--功能 切換弧度(ui,id,newVal)
+function toggleRadians(ui,id,newVal)
+--如果(新文件==2)那麼
+if (newVal==2) then
+--角度從弧度2度
+angleTo = deg2rad
+--變成每弧度2度
+angleFrom = rad2deg
+--也就是
+else
+--角度從空值地函數
+angleTo = nullFunc
+--變成空值的函數
+angleFrom = nullFunc
+--結束
+end
+--結束
+end
+--應用關節=功能(聯合處理，關節)
+applyJoints=function(jointHandles,joints)
+--為了I=1，#聯合處理，1做
+for i=1,#jointHandles,1 do
+--數據組應用關節(聯合處理[i],關節[i])
+simSetJointPosition(jointHandles[i],joints[i])
+--結束
+end
+--結束
+end
+--得到關節=功能(聯合處理，角度)
+getJoints=function(jointHandles,angles)
+--角度={0,0,0,0,0,0,0,0}
+angles={0,0,0,0,0,0,0,0}
+--為了i=1，#聯合處理，1做
+ for i=1,#jointHandles,1 do
+--角度[i]=得到數據關節位置(聯合處理[i])
+simSetJointPosition(jointHandles[i],joints[i])
+--結束
+end
+--返回角度
+return angles
+--結束
+end
